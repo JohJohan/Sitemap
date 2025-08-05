@@ -8,6 +8,14 @@ use Thepixeldeveloper\Sitemap\Interfaces\VisitorInterface;
 
 class Url implements VisitorInterface
 {
+    public const CHANGE_FREQ_ALWAYS = 'always';
+    public const CHANGE_FREQ_HOURLY = 'hourly';
+    public const CHANGE_FREQ_DAILY = 'daily';
+    public const CHANGE_FREQ_WEEKLY = 'weekly';
+    public const CHANGE_FREQ_MONTHLY = 'monthly';
+    public const CHANGE_FREQ_YEARLY = 'yearly';
+    public const CHANGE_FREQ_NEVER = 'never';
+
     /**
      * Location (URL).
      *
@@ -24,6 +32,7 @@ class Url implements VisitorInterface
 
     /**
      * Change frequency of the location.
+     * @see constants CHANGE_FREQ_*
      *
      * @var string
      */
@@ -81,6 +90,8 @@ class Url implements VisitorInterface
     }
 
     /**
+     * @see constants CHANGE_FREQ_*
+     *
      * @param string $changeFreq
      */
     public function setChangeFreq(string $changeFreq)
